@@ -1,6 +1,6 @@
 # CatOps Keys [![Build Status](https://img.shields.io/travis/catops/catops-keys.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/catops/catops-keys.svg?branch=master) [![npm](https://img.shields.io/npm/v/catops-keys.svg?maxAge=2592000&style=flat-square)](https://www.npmjs.com/package/catops-keys)
 
-:cat: Store users' public keys in Hubot
+:cat: Store users' public SSH keys in Hubot.
 
 ## Installation
 
@@ -26,9 +26,10 @@ Run `npm install catops-keys`
 
 ```
 hubot my key is <public_ssh_key> - Stores the user's public SSH key.
+hubot what is my key - Returns the user's public SSH key.
 ```
 
-A user's key can be found at `msg.message.user.key`.
+A user's key can be accessed programmatically at `msg.message.user.key`.
 
 ----
 

@@ -3,7 +3,7 @@
 #
 # Commands:
 #   hubot my key is <public_ssh_key> - Stores the user's public SSH key.
-#   hubot forget my key - Stores the user's public SSH key.
+#   hubot what is my key - Returns the user's public SSH key.
 #
 # Notes:
 #   <optional notes required for the script>
