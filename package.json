@@ -1,7 +1,7 @@
 {
   "name": "catops-keys",
   "description": "Store users' public keys in Hubot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Chris Contolini <contolini@users.noreply.github.com>",
   "license": "MIT",
   "keywords": [
