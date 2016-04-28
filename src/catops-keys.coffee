@@ -20,7 +20,7 @@ module.exports = (robot) ->
       return msg.send "`#{key}` is not a valid public SSH key. You can find your key with `cat ~/.ssh/id_rsa.pub`."
     
     user.key = key
-    msg.send "Okay, I stored your public SSH key as #{key}"
+    msg.send "Okay, I stored your public SSH key as #{key.substring(0, 40)}..."
 
   robot.respond /(what is |show )?my public (ssh )?key$/i, (msg) ->
     user = robot.brain.userForId(msg.envelope.user.id)
