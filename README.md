@@ -25,8 +25,8 @@ Run `npm install catops-keys`
 ## Commands
 
 ```
-hubot my key is <public_ssh_key> - Stores the user's public SSH key.
-hubot what is my key - Returns the user's public SSH key.
+hubot my public key is <public_ssh_key> - Stores the user's public SSH key.
+hubot what is my public key - Returns the user's public SSH key.
 ```
 
 A user's key can be accessed programmatically at `msg.message.user.key`.
