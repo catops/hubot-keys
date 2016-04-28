@@ -26,7 +26,7 @@ module.exports = (robot) ->
     user = robot.brain.userForId(msg.envelope.user.id)
     key = user.key
     if !key
-      return msg.send "I don't know your public SSH key. Add it with `#{robot.name} my key is <key>`. You can find your key with `cat ~/.ssh/id_rsa.pub`."
+      return msg.send "I don't know your public SSH key. Add it with `#{robot.name} my public key is <key>`. You can find your key with `cat ~/.ssh/id_rsa.pub`."
     msg.send "Your public ssh key is #{key}"
 
   robot.respond /(delete|remove|forget) my public (ssh )?key$/i, (msg) ->
