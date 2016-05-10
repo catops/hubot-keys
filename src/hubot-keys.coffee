@@ -4,9 +4,11 @@
 # Commands:
 #   hubot my public key is <public_ssh_key> - Stores the user's public SSH key.
 #   hubot what is my public key - Returns the user's public SSH key.
+#   hubot (delete|remove|forget) my public key - Removes the user's public SSH key.
 #
 # Notes:
-#   <optional notes required for the script>
+#   * Call the method `robot.keys.keyForUserName(<usernamename>)` or `robot.keys.keyForUserId(<userId>)`
+#   * to get a user's public key from other scripts.
 #
 # Author:
 #   contolini
