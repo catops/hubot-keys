@@ -13,25 +13,54 @@
 
 module.exports = (robot) ->
 
-  robot.respond /my public (ssh )?key is (.*)/i, (msg) ->
-    user = robot.brain.userForId(msg.envelope.user.id)
-    key = msg.match[2]
+  class Keys
+
+    keyForUserName: (name) ->
+      user = robot.brain.userForName name
+      user.key
+
+    keyForUserId: (id) ->
+      user = robot.brain.userForId id
+      user.key
+
+    addKeyForUserName: (name, key) ->
+      user = robot.brain.userForName name
+      user.key = key
+      user.key
+
+    addKeyForUserId: (id, key) ->
+      user = robot.brain.userForId id
+      user.key = key
+      user.key
+
+    deleteKeyForUserName: (name, key) ->
+      user = robot.brain.userForName name
+      delete user.key
+      user
+
+    deleteKeyForUserId: (id, key) ->
+      user = robot.brain.userForId id
+      delete user.key
+      user
+
+  robot.keys = new Keys
+
+  robot.respond /my public (ssh )?key is (.*)/i, (res) ->
+    key = res.match[2]
     if !/ssh-rsa AAAA[0-9A-Za-z+\/]+[=]{0,3}( [^@]+@[^@]+)?/.test(key)
-      return msg.send "`#{key}` is not a valid public SSH key. You can find your key with `cat ~/.ssh/id_rsa.pub`."
-    
-    user.key = key
-    msg.send "Okay, I stored your public SSH key as #{key.substring(0, 40)}..."
+      return res.send "`#{key}` is not a valid public SSH key. You can find your key with `cat ~/.ssh/id_rsa.pub`."
+    robot.keys.addKeyForUserId res.envelope.user.id, key
+    res.send "Okay, I stored your public SSH key as #{key.substring(0, 40)}..."
 
-  robot.respond /(what is |show )?my public (ssh )?key$/i, (msg) ->
-    user = robot.brain.userForId(msg.envelope.user.id)
-    key = user.key
+  robot.respond /(what is |show )?my public (ssh )?key$/i, (res) ->
+    key = robot.keys.keyForUserId res.envelope.user.id
     if !key
-      return msg.send "I don't know your public SSH key. Add it with `#{robot.name} my public key is <key>`. You can find your key with `cat ~/.ssh/id_rsa.pub`."
-    msg.send "Your public ssh key is #{key}"
+      return res.send "I don't know your public SSH key. Add it with `#{robot.name} my public key is <key>`. You can find your key with `cat ~/.ssh/id_rsa.pub`."
+    res.send "Your public ssh key is #{key}"
 
-  robot.respond /(delete|remove|forget) my public (ssh )?key$/i, (msg) ->
-    user = robot.brain.userForId(msg.envelope.user.id)
-    if !user.key
-      return msg.send "I don't know your public SSH key. I can't forget something I don't know."
-    delete user.key
-    msg.send "Okay, I removed your public SSH key."
+  robot.respond /(delete|remove|forget) my public (ssh )?key$/i, (res) ->
+    key = robot.keys.keyForUserId res.envelope.user.id
+    if !key
+      return res.send "I don't know your public SSH key. I can't forget something I don't know."
+    robot.keys.deleteKeyForUserId res.envelope.user.id
+    res.send "Okay, I removed your public SSH key."
