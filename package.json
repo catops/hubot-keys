@@ -28,7 +28,7 @@
     "sinon-chai": "*",
     "sinon": "*",
     "grunt-mocha-test": "~0.12.7",
-    "grunt-release": "~0.13.1",
+    "grunt-release": "~0.14.0",
     "matchdep": "~1.0.1",
     "grunt-contrib-watch": "~1.0.0"
   },
