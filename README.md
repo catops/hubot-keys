@@ -28,7 +28,7 @@ Run `npm install hubot-keys`
 
 ```
 hubot my public key is <public_ssh_key> - Stores the user's public SSH key.
-hubot what is my public key - Returns the user's public SSH key.
+hubot what is (my|<username>) public key - Returns the user's public SSH key.
 hubot (delete|remove|forget) my public key - Removes the user's public SSH key.
 ```
 

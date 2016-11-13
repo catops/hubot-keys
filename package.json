@@ -1,9 +1,80 @@
 {
-  "name": "hubot-keys",
+  "_args": [
+    [
+      {
+        "raw": "hubot-keys@^2.1.2",
+        "scope": null,
+        "escapedName": "hubot-keys",
+        "name": "hubot-keys",
+        "rawSpec": "^2.1.2",
+        "spec": ">=2.1.2 <3.0.0",
+        "type": "range"
+      },
+      "/home/ubuntu/winston"
+    ]
+  ],
+  "_from": "hubot-keys@>=2.1.2 <3.0.0",
+  "_id": "hubot-keys@2.1.2",
+  "_inCache": true,
+  "_location": "/hubot-keys",
+  "_nodeVersion": "4.4.1",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/hubot-keys-2.1.2.tgz_1463415282570_0.15274260425940156"
+  },
+  "_npmUser": {
+    "name": "contolini",
+    "email": "chris@contolini.com"
+  },
+  "_npmVersion": "3.8.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "hubot-keys@^2.1.2",
+    "scope": null,
+    "escapedName": "hubot-keys",
+    "name": "hubot-keys",
+    "rawSpec": "^2.1.2",
+    "spec": ">=2.1.2 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/hubot-keys/-/hubot-keys-2.1.2.tgz",
+  "_shasum": "71af44a9f82039ec3d76df30749015052c10c86c",
+  "_shrinkwrap": null,
+  "_spec": "hubot-keys@^2.1.2",
+  "_where": "/home/ubuntu/winston",
+  "author": {
+    "name": "Chris Contolini",
+    "email": "contolini@users.noreply.github.com"
+  },
+  "bugs": {
+    "url": "https://github.com/catops/hubot-keys/issues"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6",
+    "grunt": "^1.0.1"
+  },
   "description": "Store users' public keys in Hubot",
-  "version": "2.0.1",
-  "author": "Chris Contolini <contolini@users.noreply.github.com>",
-  "license": "MIT",
+  "devDependencies": {
+    "chai": "*",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.7.0",
+    "grunt-release": "~0.6.0",
+    "matchdep": "~0.1.2",
+    "mocha": "*",
+    "sinon": "*",
+    "sinon-chai": "*"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "71af44a9f82039ec3d76df30749015052c10c86c",
+    "tarball": "https://registry.npmjs.org/hubot-keys/-/hubot-keys-2.1.2.tgz"
+  },
+  "gitHead": "c54cb818835f79123415c81be345281fac8419e2",
+  "homepage": "https://github.com/catops/hubot-keys#readme",
   "keywords": [
     "hubot",
     "hubot-scripts",
@@ -11,29 +82,23 @@
     "ssh",
     "keys"
   ],
+  "license": "MIT",
+  "main": "index.coffee",
+  "maintainers": [
+    {
+      "name": "contolini",
+      "email": "chris@contolini.com"
+    }
+  ],
+  "name": "hubot-keys",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git://github.com/catops/hubot-keys.git"
   },
-  "bugs": {
-    "url": "https://github.com/catops/hubot-keys/issues"
-  },
-  "dependencies": {
-    "coffee-script": "~1.10.0",
-    "grunt": "^1.0.1"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "chai": "*",
-    "sinon-chai": "*",
-    "sinon": "*",
-    "grunt-mocha-test": "~0.12.7",
-    "grunt-release": "~0.13.1",
-    "matchdep": "~1.0.1",
-    "grunt-contrib-watch": "~1.0.0"
-  },
-  "main": "index.coffee",
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "version": "2.1.2"
 }

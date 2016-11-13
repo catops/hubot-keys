@@ -18,7 +18,7 @@ describe 'hubot-keys', ->
     expect(@robot.respond).to.have.been.calledWith(/my public (ssh )?key is (.*)/i)
 
   it 'registers a respond listener for retrieving key', ->
-    expect(@robot.respond).to.have.been.calledWith(/(what is |show )?my public (ssh )?key$/i)
+    expect(@robot.respond).to.have.been.calledWith(/(what is |show )?([^\s]+)('s?)? public (ssh )?key$/i)
 
   it 'registers a respond listener deleting key', ->
     expect(@robot.respond).to.have.been.calledWith(/(delete|remove|forget) my public (ssh )?key$/i)
